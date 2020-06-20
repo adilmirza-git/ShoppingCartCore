@@ -31,18 +31,7 @@ namespace ShoppingCartCore.Controllers
 
         }
 
-        // GET: api/checkout/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
 
-        //// POST: api/checkout
-        //[HttpPost]
-        //public Post([FromBody] string value)
-        //{
-        //}
 
         [HttpPost]
         public ResponseModel Post(string[] selection)
@@ -53,13 +42,7 @@ namespace ShoppingCartCore.Controllers
             { json = r.ReadToEnd(); }
             var data = JsonConvert.DeserializeObject<IEnumerable<InventoriesData>>(json);
 
-            decimal TotalPrice = 0;
-            decimal DiscountedPrice = 0;
-
             InventoriesData InvData = data.First<InventoriesData>();
-
-
-
 
             // Get the products with offer
             var productsWithDiscount = from c in InvData.Inventory
@@ -81,41 +64,12 @@ namespace ShoppingCartCore.Controllers
 
                 //calculate the product price having offers
 
-
-
-
-
-                //int counter = 1;
-                //decimal totalPriceDiscountedItem = 0;
-
                 int remainder = countDiscountedItem % int.Parse(row.prodDiscountQuantity);
                 int quotient = countDiscountedItem / int.Parse(row.prodDiscountQuantity);
                 decimal totDiscountedPrice = quotient * decimal.Parse(row.prodDiscountAmount);
                 totPriceForProductsWithOffers += (remainder * row.prodPrice) + totDiscountedPrice;
 
 
-                //for (counter = 1; counter <= countDiscountedItem; counter++) 
-                //{
-
-                //    if (counter.Equals(int.Parse(row.prodDiscountQuantity)))
-                //    {
-                //        //Calculate the Sum
-                //        totalPriceDiscountedItem += decimal.Parse(row.prodDiscountAmount);
-                //        //Reset Counter when the counter reaches the discounted quantity count
-                //        counter = 1;
-                //    }
-
-
-                //}
-
-                //if (countDiscountedItem >= int.Parse(row.prodDiscountQuantity)) 
-                //{
-
-                //    decimal newUnitPrice = decimal.Parse(row.prodDiscountAmount) / int.Parse(row.prodDiscountQuantity);
-
-                //    decimal TotalPriceForDiscountedItem = newUnitPrice * countDiscountedItem;
-
-                //}
 
             }
 
@@ -140,17 +94,7 @@ namespace ShoppingCartCore.Controllers
             }
 
 
-            //foreach (string s in selection)
-            //{
 
-            //    for (int x = 0; x < InvData.Inventory.Count; x++)
-            //    { 
-            //            if (InvData.Inventory[x].prodID == s && InvData.Inventory[x].prodDiscountQuantity.Equals(string.Empty)) 
-            //            {
-            //                TotalPrice += InvData.Inventory[x].prodPrice;
-            //            }
-            //    }
-            //}
 
             ResponseModel res = new ResponseModel();
             res.statusCode = "000";
@@ -166,16 +110,5 @@ namespace ShoppingCartCore.Controllers
 
 
 
-        // PUT: api/checkout/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
