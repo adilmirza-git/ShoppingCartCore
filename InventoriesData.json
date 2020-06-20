@@ -1,0 +1,43 @@
+[
+  {
+    "Inventory": [
+
+      {
+        "prodID": "001",
+        "prodDesc": "Rolex",
+        "prodPrice": "100",
+        "prodDiscountQuantity": "3",
+         "prodDiscountAmount": "200"
+      },
+
+      {
+        "prodID": "002",
+        "prodDesc": "Micheal Kors",
+        "prodPrice": "80",
+        "prodDiscountQuantity": "2",
+        "prodDiscountAmount": "120"
+      },
+
+      {
+        "prodID": "003",
+        "prodDesc": "Swatch",
+        "prodPrice": "50",
+        "prodDiscountQuantity": "",
+        "prodDiscountAmount": ""
+      },
+
+      {
+        "prodID": "004",
+        "prodDesc": "Casio",
+        "prodPrice": "30",
+        "prodDiscountQuantity": "",
+        "prodDiscountAmount": ""
+      }
+
+
+    ]
+
+
+
+  }
+]
