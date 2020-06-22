@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "fb457e3e-7bdf-46db-8390-f2537fface22",
+		"name": "ShoppingCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ShoppingCart-Test-Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd245ad9-90f1-4c6a-a24a-aa4aaf2392af",
+						"exec": [
+							"//First Test Case\r",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"//Second Test Case\r",
+							"tests[\"Body matches string\"] = responseBody.has(\"000\");\r",
+							"\r",
+							"//Third Test Case\r",
+							"tests [\"Summary Response Included\"] = responseBody.has (\"summaryResponse\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\"001\",\r\n\"002\",\r\n\"002\"\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{testenv}}/api/checkout",
+					"host": [
+						"{{testenv}}"
+					],
+					"path": [
+						"api",
+						"checkout"
+					]
+				},
+				"description": "Testing Shopping Cart API Calls"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
