@@ -18,7 +18,7 @@ namespace ShoppingCartCore.Controllers
 
 
         // GET: api/checkout
-
+        
         [HttpGet]
         public IEnumerable<InventoriesData> Get()
         {
