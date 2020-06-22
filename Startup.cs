@@ -31,7 +31,12 @@ namespace ShoppingCartCore
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseRouting(
+                
+                
+                );
+
+       
 
             app.UseAuthorization();
 
