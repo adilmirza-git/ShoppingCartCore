@@ -14,14 +14,16 @@
 </ul>
 <p>&nbsp;</p>
 <p><strong>Running Automated Test:</strong></p>
-<p>Test Json Packages are included as part of the solution. Post Running the Service on IIS Port 8080 the below command line to be run on windows command prompt to run the Automated Test.&nbsp;</p>
-<p><strong>Using command prompt locate on the folder containing the JSON collection and then run the below command to run the autmated test.</strong></p>
-<p><strong>"newman run ShoppingCart.postman_collection.json -e ShoppingCart-Test-Env.postman_environment.json"</strong></p>
+<p>JSON Packages are included as part of the solution. The Rest API service must be up and running on Port 8080 for the automated test to work.</p>
+<p>To run the automated test - Execute the below command on Windows command prompt.&nbsp;</p>
+<p><em>1. Open command prompt </em></p>
+<p><em>2. Locate on the folder containing the JSON collection and then run the below command to run the autmated test.</em></p>
+<p><em>3. Run the command "newman run ShoppingCart.postman_collection.json -e ShoppingCart-Test-Env.postman_environment.json"</em></p>
 <p>&nbsp;</p>
 <p><strong>Development Approach:</strong></p>
-<p>This service is developed using .NET Core Web API project template with Docker support. Idea is to develop a Microservice that is scalable and platform independant.&nbsp;The Test Automation is done using Postman, Node and Newman. Idea is to have a commandline that can be integrated with build pipeline like Jenkins or Azure to offer automated testing and facilitate continious integration.</p>
+<p>This service is developed using .NET Core Web API project template with Docker support. Idea is to develop a Microservice that is scalable and platform independant.&nbsp;The Test Automation are developed using Postman and can be executed using Newman command line. It is important to have commandline that can be integrated with build pipeline like Jenkins or Azure DevOps to offer automated testing and facilitate continious integration.</p>
 <p>For this project the inventory data is in the Json File "Inventories data"</p>
-<p>General Solution Architecture Guidelines and improvements that can be done when building the overall solution.</p>
+<p>General Solution Architecture Guidelines and improvements that can be done when building the overall solution making it future proof.</p>
 <ul>
 <li>To be developed as Microservice</li>
 <li>Should be Platform Independant - .NET Core supports Linux, Windows and MacOS</li>
