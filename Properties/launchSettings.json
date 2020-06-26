@@ -12,6 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "workingDirectory": "C:\\Test-Projects\\ShoppingCartCore",
+      "launchBrowser": true,
       "launchUrl": "api/checkout",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
