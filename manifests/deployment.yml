@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: adilmirzagitshoppingcartcore 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: adilmirzagitshoppingcartcore 
+    spec:
+      containers:
+        - name: adilmirzagitshoppingcartcore 
+          image: snipercontainerregistry.azurecr.io/adilmirzagitshoppingcartcore
+          ports:
+          - containerPort: 80
